@@ -1,0 +1,4 @@
+<select [(ngModel)]="color" [style.margin-left]="marginLeft" class="btn-primary">
+    <option  *ngFor="let item of arr" [value]="item">{{item}}</option>
+</select>
+<input [style.background]="color" [style.width]="width"  [style.height]="height">

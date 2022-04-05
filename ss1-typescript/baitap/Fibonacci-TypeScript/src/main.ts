@@ -8,7 +8,7 @@ function fibonacci(i: number): any {
     }
 }
 
-let sum = 0;
+let sum:number = 0;
 for (let i = 0; i < 5; i++) {
     console.log(fibonacci(i));
     sum += fibonacci(i);

@@ -9,7 +9,7 @@ function fibonacci(n) {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }
-var sum = 0;
+let sum = 0;
 for (var i = 0; i < 5; i++) {
     console.log(fibonacci(i));
     sum += fibonacci(i);

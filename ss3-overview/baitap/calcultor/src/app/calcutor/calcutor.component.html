@@ -1,0 +1,16 @@
+<div class="container-fluid">
+
+  <div class="jumbotron col-sm-4 p-2 m-0 bg-inverse">
+    <h1 class="text-center">Angular Calculator</h1>
+    <div class="input-group input-group-sm col-sm-12 m-0 p-0">
+      <input class="col-sm-12 form-control text-lg-right" type="text" #element1 (change)="checkNumber1(element1.value)" >
+      <input class="col-sm-12 form-control text-lg-right" type="text" #element2 (change)="checkNumber2(element2.value)">
+    </div>
+      <button type="button" (click)="showMessage('add')">Addition(+)</button>
+      <button type="button" (click)="showMessage('sub')">Subtraction(-)</button>
+      <button type="button" (click)="showMessage('mul')">Multiplication(x)</button>
+      <button type="button" (click)="showMessage('div')">Division(/)</button>
+  </div>
+  <b> Result Division : </b> <b> {{result}}</b>
+</div>
+
