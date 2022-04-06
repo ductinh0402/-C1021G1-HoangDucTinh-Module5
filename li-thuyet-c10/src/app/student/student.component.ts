@@ -30,4 +30,7 @@ export class StudentComponent implements OnInit {
   }
 
 
+  checkColor(value: string) {
+    this.color=value;
+  }
 }

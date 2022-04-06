@@ -1,16 +1,11 @@
 <h3>Student Information</h3>
-
 <p>ID: {{student.id}}</p>
 <p>Name: {{student.name}}</p>
 <p>Age: {{student.age}}</p>
 <p>Address: {{student.address}}</p>
 <p [style.color]="color">Mark: {{student.mark}}</p>
-
-
-Color:<input type="text" [(ngModel)]="color">
-
-
-Check Mark: <input #element [style.color]="color" type="number" (click)="checkMark(element.value)"
+Color:<input type="text" #element (change)="checkColor(element.value)">
+Check Mark: <input #element [style.color]="color" type="number" (change)="checkMark(element.value)"
                    value="{{student.mark}}" >
 
 
