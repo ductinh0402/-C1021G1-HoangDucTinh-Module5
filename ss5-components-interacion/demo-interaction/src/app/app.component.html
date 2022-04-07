@@ -1,0 +1,11 @@
+<!--<h1>Welcome to !</h1>-->
+<!--<button (click)="increment()">Increment</button>-->
+<!--<button (click)="decrement()">Decrement</button>-->
+<!--<app-child [count]="Counter"></app-child>-->
+<h1>This is parent component</h1>
+<!--<h1>Count Parent: {{countParent}}</h1>-->
+<!--<app-child (countChanged)="countChangedHandle($event)" ></app-child>-->
+<button (click)="increment()">Increment</button>
+<button (click)="decrement()">Decrement</button>
+<h1>Count Parent: {{child.count}}</h1>
+<app-child #child></app-child>
