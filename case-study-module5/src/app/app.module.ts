@@ -10,6 +10,7 @@ import { CustomerComponent } from './body/customer-management/customer.component
 import { CustomerCreateComponent } from './body/customer-management/customer-create/customer-create.component';
 import { CustomerUpdateComponent } from './body/customer-management/customer-update/customer-update.component';
 import { CustomerDetailComponent } from './body/customer-management/customer-detail/customer-detail.component';
+import { EmployeeManagementComponent } from './body/employee-management/employee-management.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { CustomerDetailComponent } from './body/customer-management/customer-det
     CustomerCreateComponent,
     CustomerUpdateComponent,
     CustomerDetailComponent,
+    EmployeeManagementComponent,
   ],
   imports: [
     BrowserModule,

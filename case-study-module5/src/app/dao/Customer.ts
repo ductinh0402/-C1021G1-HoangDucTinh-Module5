@@ -10,10 +10,10 @@ export class Customer implements ICustomer{
       name: "nguyễn văn bình",
       birthday: "12/12/2022",
       gender: true,
-      IdCard: 9876543215,
+      IdCard: "9876543215",
       phone: "093654987",
       email: "binh@gmail.com",
-      customerType: CustomerType.customerType[1],
+      customerType: CustomerType.customerType[0],
       address: "da nang"
     },
     {
@@ -21,7 +21,7 @@ export class Customer implements ICustomer{
       name: "nguyễn văn f",
       birthday: "12/12/2022",
       gender: true,
-      IdCard: 9876543215,
+      IdCard: "9876543215",
       phone: "093654987",
       email: "binh@gmail.com",
       customerType: CustomerType.customerType[2],
@@ -32,7 +32,7 @@ export class Customer implements ICustomer{
       name: "nguyễn văn e",
       birthday: "12/12/2022",
       gender: true,
-      IdCard: 9876543215,
+      IdCard: "9876543215",
       phone: "093654987",
       email: "binh@gmail.com",
       customerType: CustomerType.customerType[3],
@@ -43,7 +43,7 @@ export class Customer implements ICustomer{
       name: "nguyễn văn d",
       birthday: "12/12/2022",
       gender: true,
-      IdCard: 9876543215,
+      IdCard: "9876543215",
       phone: "093654987",
       email: "binh@gmail.com",
       customerType: CustomerType.customerType[4],
@@ -54,7 +54,7 @@ export class Customer implements ICustomer{
       name: "nguyễn văn c",
       birthday: "12/12/2022",
       gender: false,
-      IdCard: 9876543215,
+      IdCard: "9876543215",
       phone: "093654987",
       email: "binh@gmail.com",
       customerType: CustomerType.customerType[0],
@@ -65,10 +65,10 @@ export class Customer implements ICustomer{
       name: "nguyễn văn b",
       birthday: "12/12/2022",
       gender: false,
-      IdCard: 9876543215,
+      IdCard: "9876543215",
       phone: "093654987",
       email: "binh@gmail.com",
-      customerType: CustomerType.customerType[0],
+      customerType: CustomerType.customerType[1],
       address: "da nang"
     },
     {
@@ -76,7 +76,7 @@ export class Customer implements ICustomer{
       name: "nguyễn văn a",
       birthday: "12/12/2022",
       gender: false,
-      IdCard: 9876543215,
+      IdCard: "9876543215",
       phone: "093654987",
       email: "binh@gmail.com",
       customerType: CustomerType.customerType[0],
@@ -87,14 +87,14 @@ export class Customer implements ICustomer{
       name: "nguyễn văn a",
       birthday: "12/12/2022",
       gender: false,
-      IdCard: 9876543215,
+      IdCard: "9876543215",
       phone: "093654987",
       email: "binh@gmail.com",
-      customerType: CustomerType.customerType[0],
+      customerType: CustomerType.customerType[1],
       address: "huế"
     }
   ]
-  private _IdCard: number;
+  private _IdCard: string;
   private _address: string;
   private _birthday: string;
   private _customerType: ICustomerType;
@@ -104,16 +104,8 @@ export class Customer implements ICustomer{
   private _name: string;
   private _phone: string;
 
-  constructor(IdCard: number, address: string, birthday: string, customerType: ICustomerType, email: string, gender: boolean, id: number, name: string, phone: string) {
-    this._IdCard = IdCard;
-    this._address = address;
-    this._birthday = birthday;
-    this._customerType = customerType;
-    this._email = email;
-    this._gender = gender;
-    this._id = id;
-    this._name = name;
-    this._phone = phone;
+
+  constructor() {
   }
 
   static get customers(): ICustomer[] {
@@ -124,11 +116,12 @@ export class Customer implements ICustomer{
     this._customers = value;
   }
 
-  get IdCard(): number {
+
+  get IdCard(): string {
     return this._IdCard;
   }
 
-  set IdCard(value: number) {
+  set IdCard(value: string) {
     this._IdCard = value;
   }
 

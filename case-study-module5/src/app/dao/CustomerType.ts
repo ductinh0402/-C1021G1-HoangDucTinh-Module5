@@ -26,9 +26,8 @@ export class CustomerType implements ICustomerType{
   private _id: number;
   private _name: string;
 
-  constructor(id: number, name: string) {
-    this._id = id;
-    this._name = name;
+
+  constructor() {
   }
 
   static get customerType(): ICustomerType[] {

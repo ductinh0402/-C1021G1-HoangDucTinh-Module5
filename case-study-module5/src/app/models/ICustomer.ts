@@ -5,7 +5,7 @@ export interface ICustomer {
   name:string;
   birthday: string;
   gender:boolean;
-  IdCard:number;
+  IdCard:string;
   phone:string;
   email:string;
   customerType:ICustomerType;

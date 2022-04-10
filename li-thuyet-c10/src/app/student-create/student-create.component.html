@@ -1,0 +1,73 @@
+<div class="container-fluid  list-group-item-dark">
+  <div class="display-1" style="margin-left: 380px;color: #19547b">
+    CREATE STUDENT
+  </div>
+  <div class="row justify-content-around">
+    <div class="col-6">
+      <form [formGroup]="studentCreate" (ngSubmit)="saveCreate()">
+        <div class="form-group">
+          <label for="code">ID :</label>
+          <input type="number" class="form-control" id="code" formControlName="id">
+          <div *ngIf="studentCreate.get('id').errors.required && studentCreate.get('id').touched" class="alert alert-danger" role="alert">
+           ID is required
+          </div>
+          <div *ngIf="studentCreate.get('id').errors.maxlength && studentCreate.get('id').touched" class="alert alert-danger" >
+            max 2
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">NAME :</label>
+          <input type="text" class="form-control" id="name" formControlName="name">
+          <div *ngIf="studentCreate.get('name').touched" class="alert alert-danger">
+            <p *ngIf="studentCreate.get('name').errors.required">
+              Name is required
+            </p>
+            <p *ngIf="studentCreate.get('name').errors.maxlength">
+              Name maxLength 50!
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="salary">ADDRESS :</label>
+          <input type="text" class="form-control" id="salary" formControlName="address">
+          <div *ngIf="studentCreate.get('address').touched" class="alert alert-danger">
+            <div *ngIf="studentCreate.get('address').errors.required">
+              Address is required
+            </div>
+            <div *ngIf="studentCreate.get('address').errors.maxlength">
+              MaxLength 50
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">AGE:</label>
+          <input type="number" min="0" class="form-control" id="phone" formControlName="age">
+          <div *ngIf="studentCreate.get('age').touched" class="alert alert-danger">
+            <div *ngIf="studentCreate.get('age').errors.required;">
+              Age is required
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="mark">MARK :</label>
+          <input type="number" class="form-control" id="mark" name="mark" formControlName="mark">
+        </div>
+        <br>
+        <div class="form-group">
+          <button class="btn btn-danger " [routerLink]="['']">BACK TO SERVICE</button>
+
+          <input type="submit" class="btn btn-primary mx-3" value="Save">
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<p>{{studentCreate.get('age').errors.min|json}}</p>

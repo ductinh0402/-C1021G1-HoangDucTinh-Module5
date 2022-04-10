@@ -4,6 +4,7 @@ import {CustomerComponent} from "./body/customer-management/customer.component";
 import {BodyComponent} from "./body/body.component";
 import {CommonModule} from "@angular/common";
 import {HeaderComponent} from "./header/header.component";
+import {EmployeeManagementComponent} from "./body/employee-management/employee-management.component";
 const routes:Routes=[
   {
     path:'',pathMatch:'full',redirectTo:'body'
@@ -16,6 +17,9 @@ const routes:Routes=[
   },
   {
     path:"customer-management",component: CustomerComponent
+  },
+  {
+    path:"employee-management",component: EmployeeManagementComponent
   }
 ]
 
