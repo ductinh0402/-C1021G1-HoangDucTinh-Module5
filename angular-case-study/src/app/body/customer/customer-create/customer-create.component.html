@@ -1,0 +1,112 @@
+
+<div class="container">
+  <h1 class="display-1 text-center">CREATE CUSTOMER </h1>
+  <form [formGroup]="customer" (ngSubmit)="save()">
+    <div style="margin-left: 150px">
+    <div class="form-group ">
+      <label for="id" class="col-sm-1-12 ">ID:</label>
+      <input type="text"  class="form-control" id="id" formControlName="id" >
+<!--      <div class="text-danger"-->
+<!--           *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid">-->
+<!--        <p *ngIf="registerForm.get('email').errors.required ">-->
+<!--          Vui lòng nhập!-->
+<!--        </p>-->
+<!--        <p *ngIf="registerForm.get('email').errors.email ">-->
+<!--          Vui lòng nhập đúng định dạng email!!-->
+<!--        </p>-->
+<!--      </div>-->
+    </div>
+
+    <div class="form-group ">
+      <label for="code" class="col-sm-1-12 ">Code :</label>
+      <input type="text" class="form-control" id="code" formControlName="code">
+<!--      <div class="text-danger"-->
+<!--           *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid">-->
+<!--        <p *ngIf="registerForm.get('password').errors.required ">-->
+<!--          Vui lòng nhập!-->
+<!--        </p>-->
+<!--        <p *ngIf="registerForm.get('password').errors.minlength">-->
+<!--          Vui lòng nhập ít nhất 6 kí tự!-->
+<!--        </p>-->
+<!--      </div>-->
+    </div>
+    <div class="form-group ">
+      <label for="name" class="col-sm-1-12 ">Name:</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+<!--      <div *ngIf="registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').invalid"-->
+<!--           class="text-danger">-->
+<!--        <div *ngIf="registerForm.get('confirmPassword').errors.required">Vui long nhập!</div>-->
+<!--        <div *ngIf="registerForm.get('confirmPassword').errors.mustMatch">-->
+<!--          Vui lòng nhập giống password!-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+    <div class="form-group ">
+      <label for="birthday" class="col-sm-1-12 ">BIRTHDAY:</label>
+      <input type="text" class="form-control" id="birthday" formControlName="birthday">
+    </div>
+    <div class="form-group ">
+      <label for="card" class="col-sm-1-12 ">CARD:</label>
+      <input type="text" class="form-control" id="card" formControlName="card">
+    </div>
+    <div class="form-group ">
+      <label class="col-sm-1-12 ">Gender:</label>
+      <input type="radio" class="mx-2" value="Khác" formControlName="gender">Khác
+      <input type="radio" class="mx-2" value="Nam"  formControlName="gender">Nam 🙎‍♂
+      <input type="radio"  class="mx-2" value="Nữ" formControlName="gender">Nữ 🙎🏻‍♀
+<!--      <div class="text-danger"-->
+<!--           *ngIf="registerForm.get('gender').touched && registerForm.get('gender').invalid">-->
+<!--        <p *ngIf="registerForm.get('gender').errors.required ">-->
+<!--        </p>-->
+<!--      </div>-->
+    </div>
+    <div class="form-group ">
+      <label for="phone" class="col-sm-1-12 ">PHONE:</label>
+      <input type="text" class="form-control" id="phone" formControlName="phone">
+    </div>
+    <div class="form-group ">
+      <label for="email" class="col-sm-1-12 ">EMAIL:</label>
+      <input type="text" class="form-control" id="email" formControlName="email">
+    </div>
+    <div class="form-group ">
+      <label for="address" class="col-sm-1-12 ">ADDRESS:</label>
+      <input type="text" class="form-control" id="address" formControlName="address">
+    </div>
+    <div class="form-group ">
+      <label class="col-sm-1-12 ">CUSTOMER TYPE:</label>
+      <select type="text" class="form-control"   formControlName="customerType">
+        <option *ngFor="let type of customerType" [ngValue]="type">{{type.name}}</option>
+      </select>
+<!--      <div class="text-danger"-->
+<!--           *ngIf="registerForm.get('country').touched && registerForm.get('country').invalid">-->
+<!--        <p *ngIf="registerForm.get('country').errors.required ">-->
+<!--          Vui lòng chọn!-->
+<!--        </p>-->
+<!--      </div>-->
+    </div>
+
+
+    <div class="form-group ">
+      <label class="col-sm-1-12 ">Phone:</label>
+      <input type="text" class="form-control"  formControlName="phone">
+<!--      <div class="text-danger" *ngIf="registerForm.get('phone').touched && registerForm.get('phone').invalid">-->
+<!--        <p *ngIf="registerForm.get('phone').errors.required ">-->
+<!--          Vui lòng chọn!-->
+<!--        </p>-->
+<!--        <p *ngIf="registerForm.get('phone').errors.pattern">-->
+<!--          Vui lòng nhập  bắt đầu với +84, và theo sau là 9 đến 10 chữ số.-->
+<!--        </p>-->
+<!--      </div>-->
+    </div>
+    <div class="form-group ">
+      <div class="offset-sm-1 ">
+        <button class="btn btn-danger" routerLink="/customer-list">BACK TO CUSTOMER</button>
+        <input type="submit" class="btn btn-primary m-2" value="  Save  ">
+      </div>
+    </div>
+    </div>
+  </form>
+</div>
+<!--[disabled]="registerForm.invalid"-->
+
+

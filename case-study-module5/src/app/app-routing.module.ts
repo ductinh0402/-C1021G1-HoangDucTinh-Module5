@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {CustomerComponent} from "./body/customer-management/customer.component";
+
 import {BodyComponent} from "./body/body.component";
 import {CommonModule} from "@angular/common";
 import {HeaderComponent} from "./header/header.component";
-import {EmployeeManagementComponent} from "./body/employee-management/employee-management.component";
+import {EmployeeRoutingModule} from "./body/employee/employee-routing.module";
+import {CustomerRoutingModule} from "./body/customer/customer-routing.module";
+
 const routes:Routes=[
   {
     path:'',pathMatch:'full',redirectTo:'body'
@@ -15,19 +17,13 @@ const routes:Routes=[
   {
     path:"body",component: BodyComponent
   },
-  {
-    path:"customer-management",component: CustomerComponent
-  },
-  {
-    path:"employee-management",component: EmployeeManagementComponent
-  }
 ]
-
-
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    EmployeeRoutingModule,
+    CustomerRoutingModule
   ],
   exports: [RouterModule]
 })

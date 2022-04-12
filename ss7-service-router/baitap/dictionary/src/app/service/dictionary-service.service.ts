@@ -53,9 +53,15 @@ export class DictionaryServiceService {
   getAll() {
     return this.iWord;
   }
-  save(iWord){
-    this.iWord.push(iWord);
+  translate(word:string):IWord{
+    return this.iWord.find(IWord=>IWord.word===word)
   }
-
+  search(word:string){
+    for (let i = 0; i< this.iWord.length;i++){
+      if (this.iWord[i].word===word){
+        return this.iWord[i];
+      }
+    }
+  }
 
 }

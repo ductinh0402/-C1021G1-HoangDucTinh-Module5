@@ -1,0 +1,67 @@
+
+<div class="container h-100 masthead" style="margin-top: 50px">
+
+  <div class="row h-100 align-items-center">
+
+    <div class="col-12 text-center">
+      <h1 class="fw-light"><a routerLink="/customer-list">LIST OF CUSTOMER </a></h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid d-flex ">
+  <a class="btn btn-success" routerLink="/customer-create">ADD CUSTOMER</a>
+
+  <form  method="get" class="form-inline ml-auto">
+    <div class="md-form my-0">
+      <input class="form-control" type="text" placeholder="Search Name..." aria-label="Search" name="customer">
+    </div>
+    <button class="btn btn-outline-white btn-md my-0 ml-sm-2 btn btn-primary" type="submit">Search</button>
+    <input class="btn btn-outline-white btn-md my-0 ml-sm-2 btn btn-primary" type="button" value="Clear"/>
+  </form>
+</div>
+
+<p></p>
+<table class="table table-hover ">
+  <thead class="list-group-item-success">
+  <tr>
+    <th scope="col">CODE</th>
+    <th scope="col">NAME</th>
+    <th scope="col">BIRTHDAY</th>
+    <th scope="col">ID_CARD</th>
+    <th scope="col">GENDER</th>
+    <th scope="col">PHONE</th>
+    <th scope="col">EMAIL</th>
+    <th scope="col">ADDRESS</th>
+    <th scope="col">CUSTOMER TYPE</th>
+    <th scope="col"></th>
+    <th scope="col">ACTION</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let c of customerList">
+    <td scope="row">{{c.code}}</td>
+    <td scope="row">{{c.name}}</td>
+    <td scope="row">{{c.birthday | date}}</td>
+    <td scope="row">{{c.card}}</td>
+    <td scope="row">{{c.gender}}</td>
+    <td scope="row">{{c.phone}}</td>
+    <td scope="row">{{c.email}}</td>
+    <td scope="row">{{c.address}}</td>
+    <td scope="row">{{c.customerType.name}}</td>
+
+    <td>
+      <button class="btn btn-success" >Detail</button>
+    </td>
+    <td>
+      <button class="btn btn-warning">UPDATE</button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-danger" data-toggle="modal"
+              data-target="#myModal" data-bs-target="#exampleModal">
+        Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -18,4 +18,12 @@ export class DictionaryPageComponent implements OnInit {
   private getAll() {
 this.iWord=this.DictionaryPage.getAll();
   }
+
+  // search(word: string) {
+  //   const meaning = this.DictionaryPage.search(word);
+  //   this .word = {
+  //     key: word,
+  //     meaning: meaning
+  //   } ;
+  // }
 }

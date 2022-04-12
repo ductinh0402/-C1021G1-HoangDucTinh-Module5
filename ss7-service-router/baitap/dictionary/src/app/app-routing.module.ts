@@ -9,10 +9,19 @@ const routes: Routes = [
     path:'',pathMatch:'full',redirectTo:'dictionary-page'
   },
   {
-    path:'dictionary-page',component:DictionaryPageComponent
+    path:'dictionary-page',component:DictionaryPageComponent,children:[
+      {
+        path:':key',
+        component :DictionaryDetailComponent
+      }
+    ]
   },
+  // {
+  //   path:'translate/:word/:mean',component: DictionaryDetailComponent
+  // }
   {
-    path:'dictionary-detail',component: DictionaryDetailComponent
+    path: 'dictionary/search/:word',
+    component: DictionaryDetailComponent
   }
 ];
 

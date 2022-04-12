@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { HeaderComponent } from './header/header.component';
-import { CustomerComponent } from './body/customer-management/customer.component';
-import { CustomerCreateComponent } from './body/customer-management/customer-create/customer-create.component';
-import { CustomerUpdateComponent } from './body/customer-management/customer-update/customer-update.component';
-import { CustomerDetailComponent } from './body/customer-management/customer-detail/customer-detail.component';
-import { EmployeeManagementComponent } from './body/employee-management/employee-management.component';
+import {HttpClientModule} from "@angular/common/http";
+import {CustomerModule} from "./body/customer/customer.module";
+import {CommonModule} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -19,15 +19,15 @@ import { EmployeeManagementComponent } from './body/employee-management/employee
     FooterComponent,
     BodyComponent,
     HeaderComponent,
-    CustomerComponent,
-    CustomerCreateComponent,
-    CustomerUpdateComponent,
-    CustomerDetailComponent,
-    EmployeeManagementComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    CustomerModule,
+    CommonModule,
+
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,22 @@
+<h1 class="display-1">Danh sách danh mục sản phẩm</h1>
+<button class="btn-primary" [routerLink]="['/category/category-create']" >Thêm danh mục sản phẩm</button>
+<table class="table table-striped table-inverse table-hover">
+  <thead class="thead-inverse">
+  <tr>
+    <th>STT</th>
+    <th>Tên</th>
+    <th>Mô tả</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let category of categories; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{category.name}}</td>
+    <a class="btn btn-secondary m-2">Chi tiết</a>
+
+    <a class="btn btn-warning m-2" [routerLink]="['/category/category-edit',category.id]">Sửa</a>
+
+    <button class="btn btn-danger ml-1"  [routerLink]="['/category/category-delete',category.id]">Xóa</button>
+  </tr>
+  </tbody>
+</table>

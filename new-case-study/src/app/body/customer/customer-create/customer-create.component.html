@@ -1,0 +1,79 @@
+
+<div class="container-fluid">
+  <h1 class="list-group-item-warning text-center">CREATE CUSTOMER</h1>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+    </div>
+  </div>
+
+  <div class="row list-group-item-info">
+    <div class="col-12">
+      <form [formGroup]="customer" (ngSubmit)="save()">
+        <div class="form-group">
+          <label for="id">ID  :</label>
+          <input type="number" placeholder="enter id" class="form-control" id="id" formControlName="id" >
+        </div>
+        <div class="form-group">
+          <label for="code">Code  :</label>
+          <input type="number" placeholder="enter code" class="form-control" id="code" formControlName="code" >
+        </div>
+        <div class="form-group">
+          <label for="name">NAME  :</label>
+          <input type="text" placeholder="enter name" class="form-control" id="name"formControlName="name" >
+
+        </div>
+        <div class="form-group">
+          <label for="birthday">BIRTHDAY :</label>
+          <input type="date" placeholder="enter birthday" class="form-control" id="birthday" formControlName="birthday">
+
+        </div>
+
+        <div class="form-group">
+          <label for="idCard">IDCARD :</label>
+          <input type="number" placeholder="enter card" class="form-control" id="idCard" formControlName="card">
+
+        </div>
+        <div class="form-group">
+          <label >GENDER :</label>
+
+          <input type="radio" formControlName="gender"/> Nam 🙎‍♂️
+          <input type="radio" formControlName="gender"/> Nữ 🙎🏻‍♀
+          <input type="radio" formControlName="gender"/> Khác.
+
+
+        </div>
+        <div class="form-group">
+          <label for="phone">PHONE :</label>
+          <input type="number" placeholder="enter phone" class="form-control" id="phone" formControlName="phone" >
+
+        </div>
+        <div class="form-group">
+          <label for="email">EMAIL :</label>
+          <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+          <input type="email" placeholder="enter email" class="form-control" id="email" formControlName="email" >
+
+
+        </div>
+        <div class="form-group">
+          <label for="address">ADDRESS :</label>
+          <input type="text" placeholder="enter address" class="form-control" id="address" formControlName="address">
+
+
+        </div>
+        <div class="form-group">
+          <label for="employeeDivision">CUSTOMER TYPE:</label>
+          <select class="form-control" id="employeeDivision" formControlName="customerType" *ngFor="let type of customerType" >
+            <option [hidden]="type.id" >Chọn...</option>
+            <option>{{type.name}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <a class="btn btn-danger">BACK TO CUSTOMER</a>
+          <input type="submit" class="btn btn-primary" value="Save">
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+

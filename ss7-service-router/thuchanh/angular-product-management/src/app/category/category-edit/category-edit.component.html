@@ -1,0 +1,29 @@
+<h1 class="display-5">Cập nhật danh mục</h1>
+<form [formGroup]="categoryForm" (ngSubmit)="update(id)">
+  <table class="table table-striped table-inverse table-responsive">
+
+
+    <tr>
+      <td scope="row">Mã danh mục</td>
+      <td><input type="text" formControlName="id"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td scope="row">Tên danh mục:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td></td>
+
+      <td>
+        <button class="btn btn-danger">Cập nhật</button>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button class="btn btn-success" [routerLink]="['/category/category-list']">Quay lại</button>
+      </td>
+    </tr>
+  </table>
+</form>
