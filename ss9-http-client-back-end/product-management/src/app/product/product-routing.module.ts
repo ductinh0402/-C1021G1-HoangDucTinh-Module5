@@ -5,6 +5,7 @@ import {ProductCreateComponent} from './product-create/product-create.component'
 import {ProductDeleteComponent} from './product-delete/product-delete.component';
 import {ProductEditComponent} from './product-edit/product-edit.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
+import {TodoComponent} from './todo/todo.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  declarations: [
+    TodoComponent
+  ],
+  exports: [RouterModule, TodoComponent]
 })
 export class ProductRoutingModule { }
