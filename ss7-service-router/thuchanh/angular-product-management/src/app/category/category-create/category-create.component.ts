@@ -9,30 +9,23 @@ import {CategoryService} from "../../service/category.service";
   styleUrls: ['./category-create.component.css']
 })
 export class CategoryCreateComponent implements OnInit {
-  category:FormGroup;
+  categoryForm: FormGroup = new FormGroup({
+    name: new FormControl(),
+  });
 
   constructor(private categoryService: CategoryService) {
-    this.category=new FormGroup({
-      id:new FormControl(''),
-      name:new FormControl('')
-    })
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
- submit(){
-    const category=this.category.value;
-    this.categoryService.saveCategory(category);
-    this.category.reset();
- }
 
-  // submit() {
-  //   const category = this.category.value;
-  //   this.categoryService.saveCategory(category).subscribe(() => {
-  //     this.category.reset();
-  //     alert('Tạo thành công');
-  //   }, e => {
-  //     console.log(e);
-  //   });
-  // }
+  submit() {
+    const category = this.categoryForm.value;
+    this.categoryService.saveCategory(category).subscribe(() => {
+      this.categoryForm.reset();
+      alert('Tạo thành công');
+    }, e => {
+      console.log(e);
+    });
+  }
 }

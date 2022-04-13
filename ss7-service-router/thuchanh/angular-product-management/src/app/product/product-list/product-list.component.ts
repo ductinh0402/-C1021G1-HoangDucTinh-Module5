@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ServiceService} from "../../service/service.service";
+import {ProductService} from "../../service/product.service";
 import {Product} from "../../model/product";
 import {Subscription} from "rxjs";
 
@@ -9,20 +9,16 @@ import {Subscription} from "rxjs";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = [];
-  private sub: Subscription;
-  constructor(private productService: ServiceService) {
+  products: Product[];
+
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit(): void {
-    this.getAll();
+    this.productService.getAll().subscribe(data => {
+      this.products = data;
+    })
   }
-
-  private getAll() {
-    this.products = this.productService.getAll();
-  }
-
-
 
 
 }

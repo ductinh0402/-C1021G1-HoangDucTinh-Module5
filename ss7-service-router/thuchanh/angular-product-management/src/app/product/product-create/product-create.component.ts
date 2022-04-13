@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ServiceService} from "../../service/service.service";
+import {ProductService} from "../../service/product.service";
 import {FormControl, FormGroup} from "@angular/forms";
+import {CategoryService} from "../../service/category.service";
+import {Category} from "../../model/category";
 
 @Component({
   selector: 'app-product-create',
@@ -8,20 +10,36 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./product-create.component.css']
 })
 export class ProductCreateComponent implements OnInit {
-  productForm: FormGroup;
-  constructor(private productService:ServiceService) { }
+  productForm: FormGroup = new FormGroup({
+    name: new FormControl(),
+    price: new FormControl(),
+    description: new FormControl(),
+    category: new FormControl()
+  });
+  categories: Category[] = [];
 
-  ngOnInit(): void {
-    this.productForm = new FormGroup({
-      id: new FormControl(),
-      name: new FormControl(),
-      price: new FormControl(),
-      description: new FormControl(),
-    });
+  constructor(private productService: ProductService,
+              private categoryService: CategoryService) {
   }
-  submit(){
-    const  product=this.productForm.value;
-    this.productService.save(product);
-    this.productForm.reset();
+
+  ngOnInit() {
+    this.getAllCategory();
+  }
+
+  submit() {
+    const product = this.productForm.value;
+    product.category = {
+      id: product.category
+    };
+    this.productService.saveProduct(product).subscribe(() => {
+      alert('Tạo thành công');
+      this.productForm.reset();
+    }, e => console.log(e));
+  }
+
+  getAllCategory() {
+    this.categoryService.getAll().subscribe(categoires => {
+      this.categories = categoires;
+    });
   }
 }
