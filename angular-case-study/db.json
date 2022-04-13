@@ -3,43 +3,28 @@
     {
       "id": 4,
       "name": "tam",
-      "code": "KH-0001",
+      "code": "KH-8888",
       "birthday": "1997-12-12",
-      "gender": "nam",
+      "gender": "Khác",
       "card": "123456789",
       "phone": "1235123123",
-      "address": "da nang",
       "email": "tinh012210@gmail.com",
-      "customerType": {
-        "id": 1,
-        "name": "Diamond"
-      }
-    },
-    {
-      "id": 5,
-      "name": "tam",
-      "code": "KH-0001",
-      "birthday": "1997-12-12",
-      "gender": "nam",
-      "card": "123456789",
-      "phone": "1235123123",
       "address": "da nang",
-      "email": "tinh012210@gmail.com",
       "customerType": {
-        "id": 1,
-        "name": "Diamond"
+        "id": 2,
+        "name": "Platinum"
       }
     },
     {
       "id": 6,
       "name": "thanh tam",
-      "code": "KH-0001",
+      "code": "KH-9999",
       "birthday": "1997-12-12",
       "gender": "Nam",
       "card": "123458689",
       "phone": "0796298932",
-      "address": "da nang",
       "email": "tinh012210@gmail.com",
+      "address": "da nang",
       "customerType": {
         "id": 2,
         "name": "Platinum"
@@ -68,8 +53,8 @@
       "gender": "Nam",
       "card": "123456789",
       "phone": "0905946542",
-      "address": "AMERICA",
       "email": "tinh012210@gmail.com",
+      "address": "AMERICA",
       "customerType": {
         "id": 4,
         "name": "Silver"
@@ -89,6 +74,81 @@
         "id": 1,
         "name": "Diamond"
       }
+    },
+    {
+      "id": 10,
+      "name": "hoangducting",
+      "code": "3123-code",
+      "birthday": "2022-04-16",
+      "gender": "Nữ",
+      "card": 3123,
+      "phone": 123131231,
+      "email": "tinh012210@gmail.com",
+      "address": "quang tri",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Vũ đình tửu",
+      "code": "000000000000000000",
+      "birthday": "2022-04-23",
+      "gender": "Nữ",
+      "card": 3123,
+      "phone": "0796298932",
+      "email": "tuu@gmail.com",
+      "address": "quảng trị",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      }
+    },
+    {
+      "id": 12,
+      "name": "5555",
+      "code": "55555555555555555555",
+      "birthday": "2022-06-06",
+      "gender": "Nam",
+      "card": 3123,
+      "phone": "0796298932",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      }
+    },
+    {
+      "id": 13,
+      "name": "999999",
+      "code": "99999999999999",
+      "birthday": "2022-04-23",
+      "gender": "Nữ",
+      "card": 3123,
+      "phone": "0796298932",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "name": "Vinh Nam",
+      "code": "66666666666666666666666666666",
+      "birthday": "2022-04-15",
+      "gender": "Nam",
+      "card": 3123,
+      "phone": "1235123123",
+      "email": "tinh012210@gmail.com",
+      "address": "quảng trị",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "id": 15
     }
   ],
   "customerType": [

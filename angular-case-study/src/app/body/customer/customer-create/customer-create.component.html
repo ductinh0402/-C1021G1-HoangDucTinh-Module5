@@ -1,22 +1,8 @@
 
-<div class="container">
-  <h1 class="display-1 text-center">CREATE CUSTOMER </h1>
+<div class="container col-7">
+  <h1 class="display-1 text-center ">CREATE CUSTOMER </h1>
   <form [formGroup]="customer" (ngSubmit)="save()">
-    <div style="margin-left: 150px">
-    <div class="form-group ">
-      <label for="id" class="col-sm-1-12 ">ID:</label>
-      <input type="text"  class="form-control" id="id" formControlName="id" >
-<!--      <div class="text-danger"-->
-<!--           *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid">-->
-<!--        <p *ngIf="registerForm.get('email').errors.required ">-->
-<!--          Vui lòng nhập!-->
-<!--        </p>-->
-<!--        <p *ngIf="registerForm.get('email').errors.email ">-->
-<!--          Vui lòng nhập đúng định dạng email!!-->
-<!--        </p>-->
-<!--      </div>-->
-    </div>
-
+    <div style="margin-right: 100px;margin-left: 100px">
     <div class="form-group ">
       <label for="code" class="col-sm-1-12 ">Code :</label>
       <input type="text" class="form-control" id="code" formControlName="code">
@@ -43,11 +29,11 @@
     </div>
     <div class="form-group ">
       <label for="birthday" class="col-sm-1-12 ">BIRTHDAY:</label>
-      <input type="text" class="form-control" id="birthday" formControlName="birthday">
+      <input type="date" class="form-control" id="birthday" formControlName="birthday">
     </div>
     <div class="form-group ">
       <label for="card" class="col-sm-1-12 ">CARD:</label>
-      <input type="text" class="form-control" id="card" formControlName="card">
+      <input type="number" class="form-control" id="card" formControlName="card">
     </div>
     <div class="form-group ">
       <label class="col-sm-1-12 ">Gender:</label>
@@ -66,7 +52,7 @@
     </div>
     <div class="form-group ">
       <label for="email" class="col-sm-1-12 ">EMAIL:</label>
-      <input type="text" class="form-control" id="email" formControlName="email">
+      <input type="email" class="form-control" id="email" formControlName="email">
     </div>
     <div class="form-group ">
       <label for="address" class="col-sm-1-12 ">ADDRESS:</label>
@@ -75,6 +61,7 @@
     <div class="form-group ">
       <label class="col-sm-1-12 ">CUSTOMER TYPE:</label>
       <select type="text" class="form-control"   formControlName="customerType">
+        <option value="" selected disabled>Chọn...</option>
         <option *ngFor="let type of customerType" [ngValue]="type">{{type.name}}</option>
       </select>
 <!--      <div class="text-danger"-->
@@ -85,19 +72,6 @@
 <!--      </div>-->
     </div>
 
-
-    <div class="form-group ">
-      <label class="col-sm-1-12 ">Phone:</label>
-      <input type="text" class="form-control"  formControlName="phone">
-<!--      <div class="text-danger" *ngIf="registerForm.get('phone').touched && registerForm.get('phone').invalid">-->
-<!--        <p *ngIf="registerForm.get('phone').errors.required ">-->
-<!--          Vui lòng chọn!-->
-<!--        </p>-->
-<!--        <p *ngIf="registerForm.get('phone').errors.pattern">-->
-<!--          Vui lòng nhập  bắt đầu với +84, và theo sau là 9 đến 10 chữ số.-->
-<!--        </p>-->
-<!--      </div>-->
-    </div>
     <div class="form-group ">
       <div class="offset-sm-1 ">
         <button class="btn btn-danger" routerLink="/customer-list">BACK TO CUSTOMER</button>

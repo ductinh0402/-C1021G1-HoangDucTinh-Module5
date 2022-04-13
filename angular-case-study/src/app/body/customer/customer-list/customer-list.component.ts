@@ -4,6 +4,8 @@ import {ICustomer} from '../../../models/ICustomer';
 import {MatDialog} from '@angular/material/dialog';
 import {CustomerDeleteComponent} from '../customer-delete/customer-delete.component';
 import {ICustomerType} from '../../../models/ICustomerType';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -12,10 +14,12 @@ import {ICustomerType} from '../../../models/ICustomerType';
 })
 export class CustomerListComponent implements OnInit {
   customerList: ICustomer[];
-  customerTypeList: ICustomerType[];
-  message: string;
 
-  constructor(private customerService: CustomerService, private dialog: MatDialog) {
+
+  constructor(private customerService: CustomerService,
+              private dialog: MatDialog,
+              private snackBar: MatSnackBar,
+              private router: Router) {
 
 
   }
@@ -25,12 +29,6 @@ export class CustomerListComponent implements OnInit {
         this.customerList = data,
       error => this.customerList = [],
     );
-    this.customerService.getCustomerType().subscribe(data =>
-        this.customerTypeList = data,
-      error => this.customerTypeList = [],
-    );
-    // console.log(this.customerService);
-    this.message = this.customerService.message;
   }
 
   openDialogDelete(id) {
@@ -48,4 +46,14 @@ export class CustomerListComponent implements OnInit {
   }
 
 
+  searchByName(value) {
+    this.customerService.findByName(value).subscribe(data => {
+        this.customerList = data;
+        if (this.customerList.length === 0) {
+          this.snackBar.open('Không tìm thấy tên bạn tìm kiếm', 'OK');
+          this.ngOnInit();
+        }
+      }
+    );
+  }
 }

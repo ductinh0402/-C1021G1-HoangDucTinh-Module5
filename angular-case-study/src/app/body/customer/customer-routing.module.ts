@@ -4,6 +4,7 @@ import {CustomerListComponent} from './customer-list/customer-list.component';
 import {CustomerCreateComponent} from './customer-create/customer-create.component';
 import {CustomerDeleteComponent} from './customer-delete/customer-delete.component';
 import {CustomerEditComponent} from './customer-edit/customer-edit.component';
+import {CustomerDetailComponent} from './customer-detail/customer-detail.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'customer-edit/:id', component: CustomerEditComponent
+  },
+  {
+    path: 'customer-detail/:id', component: CustomerDetailComponent
   },
 ];
 

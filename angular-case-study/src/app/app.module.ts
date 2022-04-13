@@ -9,7 +9,6 @@ import {BodyComponent} from './body/body.component';
 import {FooterComponent} from './footer/footer.component';
 import {HeaderComponent} from './header/header.component';
 import {HttpClientModule} from '@angular/common/http';
-import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @NgModule({

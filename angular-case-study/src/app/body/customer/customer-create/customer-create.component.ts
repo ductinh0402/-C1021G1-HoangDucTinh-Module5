@@ -3,6 +3,9 @@ import {ICustomerType} from '../../../models/ICustomerType';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CustomerService} from '../customer.service';
 import {Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {log} from 'util';
+import {ICustomer} from '../../../models/ICustomer';
 
 @Component({
   selector: 'app-customer-create',
@@ -11,24 +14,22 @@ import {Router} from '@angular/router';
 })
 export class CustomerCreateComponent implements OnInit {
   customerType: ICustomerType[];
-  customer: FormGroup;
+  customer = new FormGroup({
+    name: new FormControl(''),
+    code: new FormControl(''),
+    birthday: new FormControl(''),
+    gender: new FormControl(''),
+    card: new FormControl(''),
+    phone: new FormControl(''),
+    email: new FormControl(''),
+    address: new FormControl(''),
+    customerType: new FormControl('')
+  });
 
-  constructor(private customerService: CustomerService, private route: Router) {
+  constructor(private customerService: CustomerService, private route: Router, private snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
-    this.customer = new FormGroup({
-      id: new FormControl(''),
-      name: new FormControl(''),
-      code: new FormControl(''),
-      birthday: new FormControl(''),
-      gender: new FormControl(''),
-      card: new FormControl(''),
-      phone: new FormControl(''),
-      email: new FormControl(''),
-      address: new FormControl(''),
-      customerType: new FormControl(''),
-    });
     this.customerService.getCustomerType().subscribe(data => {
         this.customerType = data;
       }
@@ -37,11 +38,11 @@ export class CustomerCreateComponent implements OnInit {
 
   save() {
     this.customerService.save(this.customer.value).subscribe(
-      next => {
+      (next) => {
         this.route.navigateByUrl('customer-list');
-        this.customerService.message = 'Thêm mới thành công';
+        this.snackBar.open('Thêm mới thành công', 'OK');
       }, error => {
-        this.customerService.message = 'Thêm mới không thành công';
+        this.snackBar.open('Thêm mới không thành công', 'OK');
       }
     );
   }
