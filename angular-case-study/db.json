@@ -136,19 +136,139 @@
       }
     },
     {
-      "name": "Vinh Nam",
-      "code": "66666666666666666666666666666",
-      "birthday": "2022-04-15",
-      "gender": "Nam",
-      "card": 3123,
+      "id": 4,
+      "name": "tam",
+      "code": "KH-8888",
+      "birthday": "1997-12-12",
+      "gender": "Khác",
+      "card": "123456789",
       "phone": "1235123123",
       "email": "tinh012210@gmail.com",
-      "address": "quảng trị",
+      "address": "da nang",
       "customerType": {
-        "id": 4,
-        "name": "Silver"
-      },
-      "id": 15
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "tam",
+      "code": "KH-8888",
+      "birthday": "1997-12-12",
+      "gender": "Khác",
+      "card": "123456789",
+      "phone": "1235123123",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "tam",
+      "code": "KH-8888",
+      "birthday": "1997-12-12",
+      "gender": "Khác",
+      "card": "123456789",
+      "phone": "1235123123",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "tam",
+      "code": "KH-8888",
+      "birthday": "1997-12-12",
+      "gender": "Khác",
+      "card": "123456789",
+      "phone": "1235123123",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "tam",
+      "code": "KH-8888",
+      "birthday": "1997-12-12",
+      "gender": "Khác",
+      "card": "123456789",
+      "phone": "1235123123",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "tam",
+      "code": "KH-8888",
+      "birthday": "1997-12-12",
+      "gender": "Khác",
+      "card": "123456789",
+      "phone": "1235123123",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "tam",
+      "code": "KH-8888",
+      "birthday": "1997-12-12",
+      "gender": "Khác",
+      "card": "123456789",
+      "phone": "1235123123",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "tam",
+      "code": "KH-8888",
+      "birthday": "1997-12-12",
+      "gender": "Khác",
+      "card": "123456789",
+      "phone": "1235123123",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "tam",
+      "code": "KH-8888",
+      "birthday": "1997-12-12",
+      "gender": "Khác",
+      "card": "123456789",
+      "phone": "1235123123",
+      "email": "tinh012210@gmail.com",
+      "address": "da nang",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      }
     }
   ],
   "customerType": [

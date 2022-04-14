@@ -16,6 +16,7 @@ import {CustomerDetailComponent} from './customer-detail/customer-detail.compone
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {NgModule} from '@angular/core';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -26,20 +27,21 @@ import {NgModule} from '@angular/core';
     CustomerDeleteComponent,
     CustomerDetailComponent
   ],
-    imports: [
-        CommonModule,
-        CustomerRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        MatDialogModule,
-        BrowserAnimationsModule,
-        MatFormFieldModule,
-        MatDatepickerModule,
-        MatButtonModule,
-        MatSnackBarModule,
-        FormsModule,
+  imports: [
+    CommonModule,
+    CustomerRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    FormsModule,
+    NgxPaginationModule
 
-    ]
+  ]
 })
 export class CustomerModule {
 }

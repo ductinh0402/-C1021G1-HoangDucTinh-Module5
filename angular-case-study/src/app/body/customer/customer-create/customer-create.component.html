@@ -61,7 +61,7 @@
     <div class="form-group ">
       <label class="col-sm-1-12 ">CUSTOMER TYPE:</label>
       <select type="text" class="form-control"   formControlName="customerType">
-        <option value="" selected disabled>Chọn...</option>
+        <option selected disabled>Chọn...</option>
         <option *ngFor="let type of customerType" [ngValue]="type">{{type.name}}</option>
       </select>
 <!--      <div class="text-danger"-->

@@ -6,6 +6,7 @@ import {CustomerDeleteComponent} from '../customer-delete/customer-delete.compon
 import {ICustomerType} from '../../../models/ICustomerType';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Router} from '@angular/router';
+import {log} from 'util';
 
 @Component({
   selector: 'app-customer-list',
@@ -14,20 +15,33 @@ import {Router} from '@angular/router';
 })
 export class CustomerListComponent implements OnInit {
   customerList: ICustomer[];
+  customerTypeList: ICustomerType[];
 
+  p: any;
+  public name = '';
+  public address = '';
+  public gender = '';
+  public customerType = '';
 
   constructor(private customerService: CustomerService,
               private dialog: MatDialog,
-              private snackBar: MatSnackBar,
-              private router: Router) {
+              private snackBar: MatSnackBar) {
 
 
   }
 
   ngOnInit() {
+    this.customerService.getCustomerType().subscribe(data => {
+        this.customerTypeList = data;
+      }
+    );
+    this.getAllCustomer();
+  }
+
+  getAllCustomer() {
     this.customerService.getCustomerList().subscribe(data =>
         this.customerList = data,
-      error => this.customerList = [],
+      error => this.customerList = []
     );
   }
 
@@ -46,13 +60,17 @@ export class CustomerListComponent implements OnInit {
   }
 
 
-  searchByName(value) {
-    this.customerService.findByName(value).subscribe(data => {
+  searchBy() {
+    this.customerService.Search(this.name.trim(), this.address.trim(), this.gender.trim(), this.customerType).subscribe(data => {
         this.customerList = data;
-        if (this.customerList.length === 0) {
+        if (this.customerList.length > 0) {
+          this.snackBar.open('Có tổng cộng ' + this.customerList.length + ' kết quả.', 'OK');
+        } else {
           this.snackBar.open('Không tìm thấy tên bạn tìm kiếm', 'OK');
           this.ngOnInit();
         }
+        console.log(data);
+        this.p = 1;
       }
     );
   }

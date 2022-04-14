@@ -30,8 +30,9 @@ export class CustomerService {
     return this.http.get(`${this.API_CUSTOMER_URL}/${id}`);
   }
 
-  findByName(name: string) {
-    return this.http.get<ICustomer[]>(this.API_CUSTOMER_URL + '?name_like=' + name);
+  Search(name: string, address: string, gender: string, customerType: string): Observable<any> {
+    console.log(name + ' xyz ' + address + ' xyz ' + gender + ' xyz ' + customerType + ' xyz ');
+    return this.http.get<ICustomer[]>(this.API_CUSTOMER_URL + '?name_like=' + name + '&address_like=' + address + '&gender_like=' + gender + '&customerType.name_like=' + customerType);
   }
 
   deleteById(id) {

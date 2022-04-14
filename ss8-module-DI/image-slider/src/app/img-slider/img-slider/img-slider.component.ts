@@ -16,6 +16,7 @@ export class ImgSliderComponent implements OnInit {
   ];
   itemWidth: any;
   config = 4;
+  p: number;
 
   constructor(@Inject(GalleryConfig)
               @Optional()
@@ -27,6 +28,7 @@ export class ImgSliderComponent implements OnInit {
 
   ngOnInit(): void {
     this.itemWidth = 100 / this.config;
+    this.p = 1;
   }
 
 }
